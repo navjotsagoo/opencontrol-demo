@@ -13,7 +13,7 @@ See the Minimum Number of Security Controls required for FedRAMP-low certificati
 ```bash
 compliance-masonry diff FedRAMP-low | grep "missing controls"
 ```
-> 125 Missing Controls
+> > Number of missing controls: 125
 
 Download Security Controls
 ```bash
@@ -24,7 +24,7 @@ See the number of security controls satisfied
 ```bash
 compliance-masonry diff FedRAMP-low
 ```
-> 0 missing controls!
+> > Number of missing controls: 0
 
 Generate System Security Plan (SSP) Documentation
 ```bash
@@ -43,20 +43,34 @@ cf push ssp -b staticfile_buildpack
 
 ## Options
 
+Starting with a basline where 0 security controls are satisfied for FedRAMP-low accreditation.
+```bash
+compliance-masonry diff FedRAMP-low | grep "missing controls"
+> Number of missing controls: 125
+```
+
 Inherit Infrastructure Security Controls
 ```bash
 compliance-masonry get --config manifests/infrastructure-security-controls.yml
 compliance-masonry diff FedRAMP-low | grep "missing controls"
+> Number of missing controls: 117
 ```
+Infrastructure satisfied `8` security controls.
 
 Inherit Cloud Foundry and Infrastructure Security Controls
 ```bash
 compliance-masonry get --config manifests/cloud-foundry-security-controls.yml
 compliance-masonry diff FedRAMP-low | grep "missing controls"
+> Number of missing controls: 9
 ```
+Cloud Foundry alone satisfied `108` security controls.
+
+Together, Infrastructure & Cloud Foundry satisfy 116 security controls.
 
 Inherit Application, Cloud Foundry, and Infrastructure Security Controls
 ```bash
 compliance-masonry get --config manifests/application-security-controls.yml
 compliance-masonry diff FedRAMP-low | grep "missing controls"
+> Number of missing controls: 0
 ```
+Given that Cloud Foundry and Infrastructure satisfied most of the security controls, the application had to only satisfy 9 security controls. It inherited the remaining security controls directly from the platform and infrastructure. Once those 9 security controls are satisfied, then application can be considered in full compliance and use opencontrol to generate SSP for its certification and accreditation.
