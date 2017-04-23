@@ -57,6 +57,7 @@ compliance-masonry diff FedRAMP-low | grep "missing controls"
 ```
 Infrastructure satisfied `125-117 = 8` security controls.
 
+
 Inherit Cloud Foundry and Infrastructure Security Controls
 ```bash
 compliance-masonry get --config manifests/cloud-foundry-security-controls.yml
@@ -66,6 +67,7 @@ compliance-masonry diff FedRAMP-low | grep "missing controls"
 Cloud Foundry alone satisfied `117-9 = 108` security controls.
 
 Together, Infrastructure & Cloud Foundry satisfy 116 security controls.
+
 
 Inherit Application, Cloud Foundry, and Infrastructure Security Controls
 ```bash
