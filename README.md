@@ -9,13 +9,13 @@ Download this repository
 git clone https://github.com/nsagoo-pivotal/opencontrol-demo.git
 ```
 
-See the Minimum Number of Security Controls required for FedRAMP-low certification
+See the minimum number of security controls required for FedRAMP-low certification
 ```bash
 compliance-masonry diff FedRAMP-low | grep "missing controls"
 ```
-> > Number of missing controls: 125
+> Number of missing controls: 125
 
-Download Security Controls
+Download infrastructure, cloud foundry, and application security controls
 ```bash
 compliance-masonry --verbose get
 ```
@@ -24,7 +24,7 @@ See the number of security controls satisfied
 ```bash
 compliance-masonry diff FedRAMP-low
 ```
-> > Number of missing controls: 0
+> Number of missing controls: 0
 
 Generate System Security Plan (SSP) Documentation
 ```bash
@@ -55,7 +55,7 @@ compliance-masonry get --config manifests/infrastructure-security-controls.yml
 compliance-masonry diff FedRAMP-low | grep "missing controls"
 > Number of missing controls: 117
 ```
-Infrastructure satisfied `8` security controls.
+Infrastructure satisfied `125-117 = 8` security controls.
 
 Inherit Cloud Foundry and Infrastructure Security Controls
 ```bash
@@ -63,7 +63,7 @@ compliance-masonry get --config manifests/cloud-foundry-security-controls.yml
 compliance-masonry diff FedRAMP-low | grep "missing controls"
 > Number of missing controls: 9
 ```
-Cloud Foundry alone satisfied `108` security controls.
+Cloud Foundry alone satisfied `117-9 = 108` security controls.
 
 Together, Infrastructure & Cloud Foundry satisfy 116 security controls.
 
