@@ -35,19 +35,28 @@ gitbook serve
 ```
 The gitbook command by default will create a folder called exports that contains the files needed to create a gitbook. Use the gitbook to serve the content locally.
 
+To deploy the SSP Documentation to Cloud Foundry
+```bash
+cd exports/_book
+cf push ssp -b staticfile_buildpack
+```
+
 ## Options
 
 Inherit Infrastructure Security Controls
 ```bash
-compliance-masonry --verbose get --config manifests/infrastructure-security-controls.yml
+compliance-masonry get --config manifests/infrastructure-security-controls.yml
+compliance-masonry diff FedRAMP-low | grep "missing controls"
 ```
 
 Inherit Cloud Foundry and Infrastructure Security Controls
 ```bash
-compliance-masonry --verbose get --config manifests/cloud-foundry-security-controls.yml
+compliance-masonry get --config manifests/cloud-foundry-security-controls.yml
+compliance-masonry diff FedRAMP-low | grep "missing controls"
 ```
 
 Inherit Application, Cloud Foundry, and Infrastructure Security Controls
 ```bash
-compliance-masonry --verbose get --config manifests/application-security-controls.yml
+compliance-masonry get --config manifests/application-security-controls.yml
+compliance-masonry diff FedRAMP-low | grep "missing controls"
 ```
