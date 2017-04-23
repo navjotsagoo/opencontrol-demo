@@ -1,9 +1,10 @@
-# Open Control - Accelerating the ability to achieve ATO for mission capabilities
+# Open Control - Accelerating ATO for mission capabilities
 
-Pre-Reqs:
-[Compliance Masonry CLI](https://github.com/opencontrol/compliance-masonry/blob/master/docs/install.md)
-[GitBook CLI](https://github.com/GitbookIO/gitbook-cli)
+**Pre-Reqs:**
+- [Compliance Masonry CLI](https://github.com/opencontrol/compliance-masonry/blob/master/docs/install.md)
+- [GitBook CLI](https://github.com/GitbookIO/gitbook-cli)
 
+Download this repository
 ```bash
 git clone https://github.com/nsagoo-pivotal/opencontrol-demo.git
 ```
@@ -30,9 +31,9 @@ Generate System Security Plan (SSP) Documentation
 compliance-masonry docs gitbook FedRAMP-low
 cd exports
 gitbook serve
-> Open http://localhost:4000
+> Open browser at http://localhost:4000
 ```
-The gitbook command by default will create a folder called exports that contains the files needed to create a gitbook. Use the gitbook to serve the content locally. 
+The gitbook command by default will create a folder called exports that contains the files needed to create a gitbook. Use the gitbook to serve the content locally.
 
 ## Options
 
