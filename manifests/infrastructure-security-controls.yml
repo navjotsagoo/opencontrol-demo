@@ -1,0 +1,33 @@
+name: Air Force - Business Enterprise Services
+schema_version: "1.0.0"
+
+metadata:
+  description: Accelerating Certification & Accreditation for the Air Force
+  maintainers:
+    - operations@us.af.mil
+
+dependencies:
+  standards:
+    #NIST-800-53 Standards
+    - url: https://github.com/opencontrol/NIST-800-53-Standards
+      revision: master
+
+  certifications:
+    #FedRAMP Certifications
+    - url: https://github.com/opencontrol/FedRAMP-Certifications
+      revision: master
+
+  systems:
+    # Application Security Controls Repository
+    # - url: https://github.com/nsagoo-pivotal/application-security-controls
+    #   revision: master
+
+    # Cloud Foundry Platform Security Controls Repositories
+    # - url: https://github.com/opencontrol/cf-compliance
+    #   revision: master
+    # - url: https://github.com/nsagoo-pivotal/cloud-dot-gov
+    #   revision: master
+
+    # Infrastructure Security Controls Repository
+    - url: https://github.com/opencontrol/aws-compliance
+      revision: master
